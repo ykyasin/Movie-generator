@@ -1,3 +1,4 @@
-from random import randint
+from application import app
 
-print(randint(1,10))
+if __name__=='__main__':
+    app.run(debug=True, host="0.0.0.0") 
