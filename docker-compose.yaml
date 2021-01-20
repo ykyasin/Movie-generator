@@ -3,7 +3,7 @@ services:
   frontend_service:
     image: yyasin/frontend_service_image:latest
     deploy:
-      replicas: 1
+      replicas: 2
     ports:
     - target: 5000
       published: 5000
@@ -11,16 +11,16 @@ services:
   location_service:
     image: yyasin/location_service_image:latest
     deploy:
-      replicas: 1
+      replicas: 2
 
   weather_service:
     image: yyasin/weather_service_image:latest
     deploy:
-      replicas: 1
+      replicas: 2
 
   movie_service:
     image: yyasin/movie_service_image:latest
     deploy:
-      replicas: 1
+      replicas: 2
     
 
