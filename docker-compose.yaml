@@ -1,6 +1,7 @@
 version: '3.7'
 services:
   frontend_service:
+    build: ./service_1
     image: yyasin/frontend_service_image:latest
     deploy:
       replicas: 2
@@ -9,16 +10,19 @@ services:
       published: 5000
     
   location_service:
+    build: ./service_2
     image: yyasin/location_service_image:latest
     deploy:
       replicas: 2
 
   weather_service:
+    build: ./service_3
     image: yyasin/weather_service_image:latest
     deploy:
       replicas: 2
 
   movie_service:
+    build: ./service_4
     image: yyasin/movie_service_image:latest
     deploy:
       replicas: 2
