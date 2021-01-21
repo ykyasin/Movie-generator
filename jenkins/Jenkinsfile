@@ -3,11 +3,12 @@ pipeline{
     environment{
         SECRET_KEY = credentials("SECRET_KEY")
     }
-    stages{
+    stages {
         stage("Build and Push Images"){
             steps{
                 sh "bash jenkins/build_images.sh"
             }
+        }
 
         stage("Configure Swarm"){
             steps{
