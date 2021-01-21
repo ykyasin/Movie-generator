@@ -16,4 +16,5 @@ pipeline{
                 sh "bash jenkins/deploy_compose.sh"
             }
         }
+    }
 }
