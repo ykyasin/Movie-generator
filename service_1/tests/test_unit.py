@@ -2,11 +2,24 @@ from unittest.mock import patch
 from flask import url_for
 from flask_testing import TestCase
 from application import app
+from os import getenv
 import requests_mock
 
 class TestBase(TestCase):
     def create_app(self):
+        app.config.update(
+            SQLALCHEMY_DATABASE_URI=getenv("TEST_DATABASE_URI"),
+            WTF_CSRF_ENABLED=False,
+            DEBUG=True
+        )
         return app
+
+    def setUp(self):
+        db.create_all()
+
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
 
 class TestResponse(TestBase):
 

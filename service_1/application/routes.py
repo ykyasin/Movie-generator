@@ -8,7 +8,6 @@ class Movies(db.Model):
     weather = db.Column(db.String(50), nullable=False)
     location = db.Column(db.String(50), nullable=False)
 
-db.create_all()
 
 @app.route('/')
 @app.route('/home')
