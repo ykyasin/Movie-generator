@@ -31,4 +31,4 @@ class TestResponse(TestBase):
             m.get('http://movie-gen_weather_service:5000/weather', text='Sunny')
             m.post('http://movie-gen_movie_service:5000/movie', text='Avengers')
             response = self.client.get(url_for('home'))
-            self.assertIn("Avengers")
+            self.assertIn("Avengers", response.data)
