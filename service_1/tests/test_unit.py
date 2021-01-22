@@ -29,4 +29,4 @@ class TestResponse(TestBase):
             m.get('http://movie-generator:5000/weather', text='Sunny')
             m.post('http://movie-generator:5000/movie', text='Avengers')
             response = self.client.get(url_for('home'))
-            self.assertIn(b'Movie today:' response.data)
+            self.assertNotIn(b'Movie today:' response.data)
