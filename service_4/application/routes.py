@@ -1,5 +1,5 @@
 from application import app
-from flask import request, Response
+from flask import request, Response, jsonify
 
 @app.route('/movie', methods=["POST"])
 def movie():
