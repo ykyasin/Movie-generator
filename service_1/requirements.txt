@@ -2,5 +2,6 @@ flask
 requests
 flask_sqlalchemy
 pymysql
+json
 
 
