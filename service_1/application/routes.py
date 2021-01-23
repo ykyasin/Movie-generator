@@ -12,7 +12,7 @@ class Movies(db.Model):
 @app.route('/')
 @app.route('/home')
 def home():
-    ip_address = request.environ['REMOTE_ADDR']
+    ip_address = request.environ['HTTP_X_FORWARDED_FOR']
     #if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
     #    ip_address = request.environ['REMOTE_ADDR']
     #else:
