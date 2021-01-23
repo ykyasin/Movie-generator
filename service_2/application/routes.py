@@ -8,4 +8,4 @@ def location():
     api_url = "http://api.ipstack.com/{}?access_key={}".format(ip_address, api_key)
     response = requests.get(api_url)
 
-    return Response(response=response.json(), status=200, mimetype="application/json")
+    return response
