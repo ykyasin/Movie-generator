@@ -22,9 +22,7 @@ def test2():
     x = str(type(loc.json()))
     return loc.json()
 
-print(test2())
 app.run(host="0.0.0.0", port=2000)
-print("heeeeeeeeeeeeeeeeeeeeeeeeeellllllllllllllllllloooo")
 
 #print(weather())
 #api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
