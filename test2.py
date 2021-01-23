@@ -20,7 +20,7 @@ def test2():
     loc = requests.get("http://35.242.133.235:2000/test1")
     #"http://animal-noises_animal-backend:5000/animal")
     x = str(type(loc.json()))
-    return x
+    return loc.json()
 
 
 app.run(host="0.0.0.0", port=2000)
