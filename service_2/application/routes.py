@@ -5,4 +5,5 @@ from random import choice
 @app.route('/location', methods=["GET"])
 def location():
     location = ['London','New York','Tokyo']
-    return Response(choice(location), mimetype='text/plain')
+    ip_address = request.data.decode("utf-8")
+    return Response(ip_address, mimetype='text/plain')
