@@ -1,5 +1,5 @@
 from application import app, db 
-from flask import render_template
+from flask import render_template, jsonify
 import requests
 
 class Movies(db.Model):
