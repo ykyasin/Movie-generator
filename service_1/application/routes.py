@@ -15,7 +15,7 @@ def home():
     ip_address = request.environ['HTTP_X_FORWARDED_FOR']
 
     location_response = requests.post('http://movie-gen_location_service:5000/location', data=ip_address)
-    location_response = location_response.json()
+    location_response = location_response.text
     weather_response = requests.post('http://movie-gen_weather_service:5000/weather', json=location_response)
     #movie_response = requests.post("http://movie-gen_movie_service:5000/movie", data=weather_response.text)
     movie_response = "Avengers"
