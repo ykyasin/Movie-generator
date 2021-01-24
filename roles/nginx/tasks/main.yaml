@@ -1,3 +1,4 @@
+---
 - name: Installing nginx using apt
   apt:
     pkg:
