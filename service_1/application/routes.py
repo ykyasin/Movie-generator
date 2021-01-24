@@ -14,8 +14,12 @@ class Movies(db.Model):
 @app.route('/home')
 def home():
     ip_address = request.environ['HTTP_X_FORWARDED_FOR']
-
-    location_response = requests.post('http://movie-gen_location_service:5000/location', data=ip_address)
+    ip_address = str(ip_address)
+    api_key = "80a3e9c5b548dfa6ca3d7cc727c1cc5e"
+    api_url = "http://api.ipstack.com/{}?access_key={}".format(ip_address, api_key)
+    r = requests.get(api_url)
+    location_response = r.json().["city"]
+    #location_response = requests.post('http://movie-gen_location_service:5000/location', data=ip_address)
     weather_response = "Sunny"
     movie_response = "Avengers"
 
@@ -23,4 +27,4 @@ def home():
     #db.session.add(new_movie)
     #db.session.commit() 
 
-    return render_template('index.html', location=location_response.text, weather=weather_response, movie=movie_response)
+    return render_template('index.html', location=location_response, weather=weather_response, movie=movie_response)
