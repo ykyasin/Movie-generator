@@ -5,18 +5,8 @@ import requests
 
 @app.route('/weather', methods=["POST"])
 def weather():
-    #weather = ['Sunny','Rainy','Windy']
-    city = request.json
-    #city = city["location"]["capital"]
-    lat = city["latitude"]
-    lon = city["longitude"]
-    #city = "London"
-    api_key = "5a769573da91b09400e1d86ec1ca27bf"
-    api_url = "http://api.openweathermap.org/data/2.5/weather?lat={}&lon={}&appid={}".format(lat, lon, api_key)
-    
-    response = requests.get(api_url)
-    response = response.json()
-    return jsonify(response)
+    weather = ['Sunny','Rainy','Windy']
+    return Response(choice(weather), mimetype='text/plain')
 
 #http://api.openweathermap.org/data/2.5/weather?q=Tokyo&APPID=5a769573da91b09400e1d86ec1ca27bf
 # x["weather"][0]["main"]
