@@ -21,7 +21,8 @@ def home():
     
     location = location_response.json()["city"]
     country = location_response.json()["country_name"]
-    weather = weather_response.json()["weather"][0]["main"]
+    #weather = weather_response.json()["weather"][0]["main"]
+    weather = ip_address
     json_dict = {"country":country, "weather":weather}
     movie_response = requests.post('http://movie-gen_movie_service:5000/movie', json=json_dict)
 
