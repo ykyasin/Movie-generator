@@ -1,6 +1,6 @@
 from application import app
 from flask import request, Response, jsonify
-import requests
+import requests 
 
 @app.route('/location', methods=["GET"])
 def location():
@@ -13,4 +13,4 @@ def location():
 
     response = requests.get(api_url)
     response = response.json()
-    return Response("Testing 123", mimetype='text/plain')
+    return jsonify({"location":response["city"]})
