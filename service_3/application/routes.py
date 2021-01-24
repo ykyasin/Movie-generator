@@ -3,7 +3,7 @@ from flask import request, Response, jsonify
 from random import choice
 import requests
 
-@app.route('/weather', methods=["POST"])
+@app.route('/weather', methods=["GET"])
 def weather():
     weather = ['Sunny','Rainy','Windy']
     return Response(choice(weather), mimetype='text/plain')
