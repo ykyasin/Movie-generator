@@ -13,7 +13,7 @@ class Movies(db.Model):
 @app.route('/')
 @app.route('/home')
 def home():
-    ip_address = request.environ['HTTP_X_FORWARDED_FOR']
+    #ip_address = request.environ['HTTP_X_FORWARDED_FOR']
     
     location_response = requests.get('http://movie-gen_location_service:5000/get') 
     location = location_response.json()
