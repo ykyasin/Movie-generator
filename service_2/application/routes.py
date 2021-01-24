@@ -12,4 +12,4 @@ def location():
 
     response = requests.get(api_url)
     response = response.json()
-    return jsonify({"location":response["city"]})
+    return "testing 123"
