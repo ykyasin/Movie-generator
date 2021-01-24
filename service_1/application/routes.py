@@ -19,11 +19,13 @@ def home():
     weather_response = requests.post('http://movie-gen_weather_service:5000/weather', json=location_response.json())
     
     location = location_response.json()["city"]
-    json_dict = {"country":location_response.json()["country_name"], "weather":weather_response.json()["weather"][0]["main"]}
+    country = location_response.json()["country_name"]
+    weather = weather_response.json()["weather"][0]["main"]
+    json_dict = {"country":country, "weather":weather}
     movie_response = requests.post('http://movie-gen_movie_service:5000/movie', json=json_dict)
 
     #new_movie = Movies(name=movie_response.text,weather=weather_response.text,location=location_response.text)
     #db.session.add(new_movie)
     #db.session.commit() 
 
-    return render_template('index.html', location=location, weather=weather, movie=movie_response.text)
+    return render_template('index.html', location=location, weather=weather, movie=movie_response)
