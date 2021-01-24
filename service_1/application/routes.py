@@ -13,10 +13,8 @@ class Movies(db.Model):
 @app.route('/')
 @app.route('/home')
 def home():
-    #ip_address = request.environ['HTTP_X_FORWARDED_FOR']
-    ip_address = "80.43.77.181"
 
-    location_response = requests.post('http://movie-gen_location_service:5000/location', data=ip_address) 
+    location_response = requests.post('http://movie-gen_location_service:5000/location', data=request.environ['HTTP_X_FORWARDED_FOR']) 
     weather_response = requests.post('http://movie-gen_weather_service:5000/weather', json=location_response.json())
     
     location = location_response.json()["city"]
