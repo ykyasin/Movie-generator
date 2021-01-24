@@ -13,8 +13,10 @@ class Movies(db.Model):
 @app.route('/')
 @app.route('/home')
 def home():
-    ip_address = request.environ['HTTP_X_FORWARDED_FOR']
-    ip_address2 = request.remote_addr
+    if 'HTTP_X_FORWARDED_FOR' in request.environ:
+        ip_address = request.environ['HTTP_X_FORWARDED_FOR']
+    else:
+        ip_address = request.remote_addr
     
     location_response = requests.post('http://movie-gen_location_service:5000/location', data=ip_address) 
     weather_response = requests.post('http://movie-gen_weather_service:5000/weather', json=location_response.json())
@@ -29,4 +31,4 @@ def home():
     db.session.add(new_movie_history)
     db.session.commit() 
 
-    return render_template('index.html', location=location, weather=weather, movie=movie_response.text, ip_address2 =ip_address2)
+    return render_template('index.html', location=location, weather=weather, movie=movie_response.text, ip_address =ip_address)
