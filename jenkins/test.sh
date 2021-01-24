@@ -4,8 +4,8 @@
 sudo apt-get update
 sudo apt-get install -y python3-venv python3-pip
 
-# Exporting test database uri
-export TEST_DATABASE_URI=${TEST_DATABASE_URI}
+# Exporting test database uri and api keys
+export TEST_DATABASE_URI=${TEST_DATABASE_URI} API_LOCATION=${API_LOCATION} API_WEATHER=${API_WEATHER}
 
 # Activating virtual environment and installing requirements
 python3 -m venv venv

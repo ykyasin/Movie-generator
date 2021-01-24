@@ -15,4 +15,6 @@ class TestResponse(TestBase):
             r.return_value.text = {"Test":"Success"}
             response = self.client.get(url_for('location'))
             self.assertEqual(b'Test', response.data)
+
+        
             

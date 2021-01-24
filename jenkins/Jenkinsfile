@@ -4,6 +4,8 @@ pipeline{
         SECRET_KEY = credentials("SECRET_KEY")
         DATABASE_URI = credentials("DATABASE_URI")
         TEST_DATABASE_URI = credentials("TEST_DATABASE_URI") 
+        API_LOCATION = credentials("API_LOCATION")
+        API_WEATHER = credentials("API_WEATHER")
     }
     stages {
         stage("Testing stage"){
