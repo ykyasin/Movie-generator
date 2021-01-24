@@ -2,7 +2,7 @@ from application import app
 from flask import request, Response, jsonify
 import requests 
 
-@app.route('/location', methods=["GET"])
+@app.route('/location', methods=["POST"])
 def location():
     #ip_address = request.environ['HTTP_X_FORWARDED_FOR']
     ip_address = request.data.decode("utf-8")
