@@ -14,13 +14,15 @@ class Movies(db.Model):
 @app.route('/home')
 def home():
     ip_address = request.environ['HTTP_X_FORWARDED_FOR']
-    location_response = requests.post('http://movie-gen_location_service:5000/location', data=ip_address)
-    #weather_response = requests.post('http://movie-gen_weather_service:5000/weather', data=)
-    weather_response = "Some"
+    
+    location_response = requests.get('http://movie-gen_location_service:5000/get')
+    location = location_response.json()
+
+    weather_response = "some"
     movie_response = "Avengers"
 
     #new_movie = Movies(name=movie_response.text,weather=weather_response.text,location=location_response.text)
     #db.session.add(new_movie)
     #db.session.commit() 
 
-    return render_template('index.html', location=location_response["city"], weather=weather_response, movie=movie_response)
+    return render_template('index.html', location=location_response["location"], weather=weather_response, movie=movie_response)
