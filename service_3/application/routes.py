@@ -3,15 +3,17 @@ from flask import request, Response, jsonify
 from random import choice
 import requests
 
-@app.route('/weather', methods=["GET"])
+@app.route('/weather', methods=["POST"])
 def weather():
-    weather = ['Sunny','Rainy','Windy']
+    #weather = ['Sunny','Rainy','Windy']
     city = request.json
+    city = city["location"]["capital"]
     api_key = "5a769573da91b09400e1d86ec1ca27bf"
     api_url = "http://api.openweathermap.org/data/2.5/weather?q={}&appid={}".format(city, api_key)
-    r = requests.get(api_url)
-    weather_response = r.json()
-    return jsonify(weather_response)
+    
+    response = requests.get(api_url)
+    response = response.json()
+    return jsonify(response)
 
 #http://api.openweathermap.org/data/2.5/weather?q=Tokyo&APPID=5a769573da91b09400e1d86ec1ca27bf
 # x["weather"][0]["main"]

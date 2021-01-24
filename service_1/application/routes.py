@@ -16,13 +16,11 @@ def home():
     ip_address = request.environ['HTTP_X_FORWARDED_FOR']
     
     location_response = requests.post('http://movie-gen_location_service:5000/location', data=ip_address) 
-    #location = location_response.json()
-
-    weather_response = "some"
+    weather_response = requests.post('http://movie-gen_location_service:5000/location', json=location_response.json())
     movie_response = "Avengers"
 
     #new_movie = Movies(name=movie_response.text,weather=weather_response.text,location=location_response.text)
     #db.session.add(new_movie)
     #db.session.commit() 
 
-    return render_template('index.html', location=location_response.json()["city"], weather=weather_response, movie=movie_response)
+    return render_template('index.html', location=location_response.json()["city"], weather=weather_response.json()["weather"][0]["main"], movie=movie_response)
