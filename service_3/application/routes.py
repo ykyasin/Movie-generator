@@ -8,7 +8,7 @@ def weather():
     weather = ['Sunny','Rainy','Windy']
     crd = request.json
     api_key = "5a769573da91b09400e1d86ec1ca27bf"
-    api_url = "http://api.openweathermap.org/data/2.5/weather?lat={}&lon={}}&appid={}".format(crd["lat"], crd["lat"], api_key)
+    api_url = "http://api.openweathermap.org/data/2.5/weather?lat={}&lon={}}&appid={}".format(crd["lat"], crd["lon"], api_key)
     r = requests.get(api_url)
     weather_response = r.json()
     return jsonify(weather_response)
