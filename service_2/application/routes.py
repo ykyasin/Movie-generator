@@ -12,4 +12,4 @@ def location():
 
     response = requests.get(api_url)
     response = response.json()
-    return "testing 123"
+    return Response("Testing 123", mimetype='text/plain')
