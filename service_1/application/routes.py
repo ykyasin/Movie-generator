@@ -25,4 +25,4 @@ def home():
     #db.session.add(new_movie)
     #db.session.commit() 
 
-    return render_template('index.html', location=location_response.json()["city"], weather=weather_response, movie=movie_response)
+    return render_template('index.html', location=location_response["city"], weather=weather_response, movie=movie_response)
