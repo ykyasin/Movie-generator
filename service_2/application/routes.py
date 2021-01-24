@@ -12,7 +12,7 @@ def location():
 
     return response.json()["city"]
 
-@app.route('/location', methods=["POST"])
+@app.route('/get', methods=["POST"])
 def get():
     location = location()
     return jsonify({"location":location})
