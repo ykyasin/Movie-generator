@@ -9,5 +9,4 @@ def location():
     api_url = "http://api.ipstack.com/{}?access_key={}".format(str(ip_address), api_key)
     
     response = requests.get(api_url)
-    response = response.json()
-    return jsonify(response)
+    return jsonify(response.json())

@@ -11,7 +11,8 @@ class TestBase(TestCase):
 
 class TestResponse(TestBase):
     def test_location(self):
-        with patch("choice") as random:
-            random.return_value = "Tokyo"
+        with patch('requests.get') as r:
+            r.return_value.text = {"Success"}   
             response = self.client.get(url_for('location'))
-            self.assertEqual(b'Tokyo', response.data)
+            self.assertEqual(b'Success', response.data)
+            
