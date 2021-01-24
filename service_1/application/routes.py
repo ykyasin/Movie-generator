@@ -15,8 +15,7 @@ class Movies(db.Model):
 def home():
     ip_address = request.environ['HTTP_X_FORWARDED_FOR']
     location_response = requests.post('http://movie-gen_location_service:5000/location', data=ip_address)
-    crd = {"lat" : location_response["latitude"], "lon":location_response["longitude"]}
-    weather_response = requests.post('http://movie-gen_weather_service:5000/weather', json=crd)
+    weather_response = requests.post('http://movie-gen_weather_service:5000/weather', json={"city":location_response["location"]["capital"]})
     movie_response = "Avengers"
 
     #new_movie = Movies(name=movie_response.text,weather=weather_response.text,location=location_response.text)
