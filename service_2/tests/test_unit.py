@@ -12,7 +12,7 @@ class TestBase(TestCase):
 class TestResponse(TestBase):
     def test_location(self):
         with patch('requests.get') as r:
-            r.return_value.text = {"Success"}   
+            r.return_value.text = "Success"  
             response = self.client.get(url_for('location'))
             self.assertEqual(b'Success', response.data)
             
