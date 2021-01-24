@@ -16,7 +16,7 @@ def home():
     if request.environ['HTTP_X_FORWARDED_FOR']:
         ip_address = request.environ['HTTP_X_FORWARDED_FOR']
     else: 
-        ip_address = request.environ['REMOTE_ADDR']
+        ip_address = "Test"
     
     location_response = requests.post('http://movie-gen_location_service:5000/location', data=ip_address) 
     weather_response = requests.post('http://movie-gen_weather_service:5000/weather', json=location_response.json())
