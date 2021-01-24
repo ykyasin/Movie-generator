@@ -12,12 +12,11 @@ def movie():
         if info["weather"] in in_uk:
             movie = in_uk[info["weather"]]
         else:
-            movie = in_uk["other"]
+            movie = in_uk["Other"]
     else: 
         if info["weather"] in out_uk:
             movie = out_uk[info["weather"]]
         else:
-            movie = out_uk["other"]
+            movie = out_uk["Other"]
     
-    #weather = request.data.decode("utf-8")
     return Response(movie, mimetype='text/plain')
