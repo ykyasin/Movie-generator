@@ -1,5 +1,6 @@
 from application import app
 from flask import request, Response, jsonify
+import requests
 
 @app.route('/location', methods=["GET"])
 def location():
