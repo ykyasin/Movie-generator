@@ -7,7 +7,8 @@ import requests
 def weather():
     #weather = ['Sunny','Rainy','Windy']
     city = request.json
-    city = city["location"]["capital"]
+    #city = city["location"]["capital"]
+    city = "London"
     api_key = "5a769573da91b09400e1d86ec1ca27bf"
     api_url = "http://api.openweathermap.org/data/2.5/weather?q={}&appid={}".format(city, api_key)
     
