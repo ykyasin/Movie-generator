@@ -28,4 +28,4 @@ def home():
     #db.session.add(new_movie)
     #db.session.commit() 
 
-    return render_template('index.html', location=location, weather=weather, movie=movie_response)
+    return render_template('index.html', location=location, weather=weather, movie=movie_response.text)
