@@ -24,7 +24,7 @@ def home():
     json_dict = {"country":country, "weather":weather}
     movie_response = requests.post('http://movie-gen_movie_service:5000/movie', json=json_dict)
 
-    movie_history = Movies(name=movie.text,weather=weather,location=location)
+    movie_history = Movies(name=movie_response.text,weather=weather,location=location)
     db.session.add(new_movie)
     db.session.commit() 
 
