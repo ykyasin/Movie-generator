@@ -9,4 +9,4 @@ def location():
     response = requests.get(api_url)
     r = response.json()["city"]
     r = str(r)
-    return return Response(r, mimetype='text/plain')
+    return Response(r, mimetype='text/plain')
