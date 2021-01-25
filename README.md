@@ -38,3 +38,12 @@ Details on the stages used in the Jenkins pipeline can be found in the jenkinsfi
 ### Swarm configuration
 
 ### The services 
+
+## Testing
+For this project, I have decided to implement unit testing in the application. Unit testing allows us to test whether each functions returns an expected response. The images below show information on how many tests have passed and how many lines have been covered, these have posted on coverage reports for easy viewing.
+
+The command used to produce the report is:
+```py
+python3 -m pytest --cov --cov-config=code/.coveragerc --cov-report term-missing --cov-report xml --junitxml junit.xml
+ ```
+A junit.xml is also produced which allows us to make use of a Jenkins plugin called Junit. This gives us a graphical view of the test results, making it easier to debug if any errors arise. 
