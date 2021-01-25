@@ -10,8 +10,7 @@ class TestBase(TestCase):
         return app
 
 class TestResponse(TestBase):
-    def test_location(self):
-        with patch("choice") as random:
-            random.return_value = "Tokyo"
-            response = self.client.get(url_for('location'))
-            self.assertEqual(b'Tokyo', response.data)
+    def test_movie(self):
+        for x in range(50):
+            response = self.client.get(url_for('get'))
+            self.assertIn(response.data, [b"London", b"New Delhi", b"Tokyo"])
