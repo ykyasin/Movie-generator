@@ -9,7 +9,7 @@
    * [Entity Relationship Diagram](#entity-relationship-diagram)
    * [Continuous Integration Pipeline](#continuous-integration-pipeline)
    * [Risk Assessment](#risk-assessment)
-* [CRUD Functionality](#crud-functionality)
+* [Software Infrastructure](#software-infrastructure)
    * [Login Page](#login-page)
    * [Main Page](#main-page)
 * [CI Server](#ci-server)

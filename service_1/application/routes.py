@@ -1,5 +1,6 @@
 from application import app, db, api_key
 from flask import render_template, jsonify, request
+from os import getenv
 import requests
 import json
 
@@ -17,8 +18,8 @@ def home():
         ip_address = request.environ['HTTP_X_FORWARDED_FOR']
     else:
         ip_address = request.remote_addr
-    api_location = api_key("location")
-    api_weather = api_key("weather")
+    api_location = getenv("API_LOCATION")
+    api_weather = getenv("API_WEATHER")
     #location_response = requests.post('http://movie-gen_location_service:5000/location', data=ip_address) 
     #location_response = requests.post('http://movie-gen_location_service:5000/location', json={"ip_address":ip_address, "api_key":api_location}) 
     #weather_response = requests.post('http://movie-gen_weather_service:5000/weather', json=location_response.json())
