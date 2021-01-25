@@ -17,9 +17,10 @@ def home():
         ip_address = request.environ['HTTP_X_FORWARDED_FOR']
     else:
         ip_address = request.remote_addr
-    
+    api_location = api_key("location")
+    api_weather = api_key("weather")
     #location_response = requests.post('http://movie-gen_location_service:5000/location', data=ip_address) 
-    location_response = requests.post('http://movie-gen_location_service:5000/location', json={"ip_address":ip_address, "api_key":api_key("location")}) 
+    location_response = requests.post('http://movie-gen_location_service:5000/location', json={"ip_address":ip_address, "api_key":api_location}) 
     weather_response = requests.post('http://movie-gen_weather_service:5000/weather', json=location_response.json())
     
     location = location_response.json()["city"]
