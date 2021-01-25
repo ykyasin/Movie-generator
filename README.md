@@ -41,6 +41,8 @@ For the sake of this project, only one ERD is needed. The image below shows the 
 ![Movie_erd](https://user-images.githubusercontent.com/73299366/105685717-49e67700-5eee-11eb-8624-e74e3eb2d3b7.JPG)
 
 ### CI Pipeline
+The image below shows the CI Pipeline used for this project. The first thing to be done is to grab a task from the trello board, then after completing that task, the code is pushed to GitHub which triggers a webhook. This then starts the Jenkins pipeline, first the tests are done. Then using Docker-compose, the images are built and pushed to Dockerhub. Jenkins then uses Ansible to configure external nodes, including installing docker on them. Anisble also configures an NGINX node to act as a load balancer. The user connects to the load balancer and recieves the webpage. 
+
 ![CI-Pipeline](https://user-images.githubusercontent.com/73299366/105685792-61bdfb00-5eee-11eb-8b8d-63db57953ad7.JPG)
 
 
@@ -58,9 +60,11 @@ Jenkins is an open source automation server that automates many parts of the pro
 Details on the stages used in the Jenkins pipeline can be found in the jenkinsfile. 
 
 ### Swarm configuration
+The below image shows the basic set up of the swarm. After Ansible installs docker on both swarm-manager and swarm-worker nodes, it then initialises the swarm on the manager node and joins the worker nodes. 
 ![swarm](https://user-images.githubusercontent.com/73299366/105685854-79957f00-5eee-11eb-85bd-6ae8db0616f8.JPG)
 
-### The services 
+### Services setup
+As mentioned before, the project must include atleast 4 services as part of the MVP. The below image shows the set up of the services for this project.  The front-end recieves GET requests from service 1 and 2, then posts that information to service 4, which returns an object, this is a simple set up. 
 ![services](https://user-images.githubusercontent.com/73299366/105685888-84501400-5eee-11eb-8d29-8e4ea46acba3.JPG)
 
 ## Testing
