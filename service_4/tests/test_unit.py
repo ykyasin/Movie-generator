@@ -11,7 +11,6 @@ class TestBase(TestCase):
 
 class TestResponse(TestBase):
     def test_movie(self):
-        with patch("choice") as random:
-            random.return_value = "Avengers"
-            response = self.client.get(url_for('movie'))
-            self.assertEqual(b'Avengers', response.data)
+        response = self.client.post(url_for('movie'), json={"location":"London", "weather":"Sunny"})
+        self.assertEqual(b"Avengers: Infinity War", response.data)
+
