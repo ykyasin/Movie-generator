@@ -27,8 +27,8 @@ class TestResponse(TestBase):
 
     def test_avengers(self):
         with requests_mock.mock() as m:
-            m.get('http://movie-gen_location_service:5000/location', text='Tokyo')
-            m.get('http://movie-gen_weather_service:5000/weather', text='Sunny')
-            m.post('http://movie-gen_movie_service:5000/movie', text='Avengers')
+            m.get('http://movie-gen_location_service:5000/location', text='Tokyo 24')
+            m.get('http://movie-gen_weather_service:5000/weather', text='Sunny 24')
+            m.post('http://movie-gen_movie_service:5000/movie', text='Avengers 48')
             response = self.client.get(url_for('home'))
-            self.assertIn(b'Avengers', response.data)
+            self.assertIn(b'Avengers 48', response.data)
