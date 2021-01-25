@@ -17,10 +17,15 @@ For project tracking, I decided to use Trello board. Trello board is a nice ligh
 * Complete - All completed tasks
 * Issues - Any issues that came up
 
+![kanban_board](https://user-images.githubusercontent.com/73299366/105680814-31735e00-5ee8-11eb-9160-6868cea497c7.JPG)
+
 ### Risk assessment
+![Risk_Assessment](https://user-images.githubusercontent.com/73299366/105680873-464ff180-5ee8-11eb-83b3-d50fdb0dc575.JPG)
 
 ### Entity Relationship Diagram
 For the sake of this project, only one ERD is needed. The image below shows the "Movie" ERD which contains the id, name, location and weather. This table will help us create data that persists in the database after each refresh.
+![Movie_erd](https://user-images.githubusercontent.com/73299366/105680929-58319480-5ee8-11eb-8394-fb2dd55be31a.JPG)
+
 
 ## Software Infrastructure
 ### Jenkins 
