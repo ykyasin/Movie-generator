@@ -70,8 +70,18 @@ As mentioned before, the project must include atleast 4 services as part of the 
 ## Testing
 For this project, I have decided to implement unit testing in the application. Unit testing allows us to test whether each functions returns an expected response. The images below show information on how many tests have passed and how many lines have been covered, these have posted on coverage reports for easy viewing.
 
+![s1r](https://user-images.githubusercontent.com/73299366/105688687-cd559780-5ef1-11eb-87e4-df9a457ced6d.JPG)
+![s2r](https://user-images.githubusercontent.com/73299366/105688705-d0e91e80-5ef1-11eb-93c1-d04adf6281a5.JPG)
+![s3r](https://user-images.githubusercontent.com/73299366/105688708-d34b7880-5ef1-11eb-8394-0ebcb2c3e0c0.JPG)
+![s4r](https://user-images.githubusercontent.com/73299366/105688712-d47ca580-5ef1-11eb-963e-261c485018d1.JPG)
+
+
 The command used to produce the report is:
 ```py
 python3 -m pytest --cov --cov-config=code/.coveragerc --cov-report term-missing --cov-report xml --junitxml junit.xml
  ```
 A junit.xml is also produced which allows us to make use of a Jenkins plugin called Junit. This gives us a graphical view of the test results, making it easier to debug if any errors arise. 
+
+![testing](https://user-images.githubusercontent.com/73299366/105688476-8d8eb000-5ef1-11eb-9570-01248b05ad21.JPG)
+
+The graph shows that in the latest build all tests have passed, as well as 100% coverage. 
