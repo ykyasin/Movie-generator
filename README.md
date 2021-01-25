@@ -1,7 +1,19 @@
 # movie-generator
 ## Introduction 
 ### Objective
-The services are to create an “object” which will either be used or displayed by the other services. Service 1 will be the core service, i.e. the front-end that the user will see. Here will contain the relevant html files. Also, this service will communicate with the other services. Service 2 and 3 will each generate a random object that will be sent to service 1. Service 4 will generate an object based on the response from service 2 and 3.  
+This is an individual project in order to meet the SFIA requirements. The objective of this project is to create a web application based on the microservice architecture. Which allows us to split up the application into more manageble bits as opposed to one monolithic application.
+
+The services are to create an “object” which will either be used or displayed by the other services. Service 1 will be the core service, i.e. the front-end that the user will see. Here will contain the relevant html files. Also, this service will communicate with the other services. Service 2 and 3 will each generate a random object that will be sent to service 1. Service 4 will generate an object based on the response from service 2 and 3. 
+
+The constraints are as follows: 
+* Kanban Board: Asana or an equivalent Kanban Board
+* Version Control: Git
+* CI Server: Jenkins
+* Configuration Management: Ansible
+* Cloud server: GCP virtual machines
+* Containerisation: Docker
+* Orchestration Tool: Docker Swarm
+* Reverse Proxy: NGINX
 
 ### My Project Proposal 
 The idea I went with is a website that produces a movie based on a location and weather. The user will first connect to service 1 which will display the webpage, but before displaying the page, a GET request is made to service 2 and service 3. Service 2 will return a random location, and service 3 a random weather. Then a POST request is made to service 4 sending the location and weather information obtained from the previous GET requests. Service 4 will then choose a film based on that information.
@@ -16,6 +28,7 @@ For project tracking, I decided to use Trello board. Trello board is a nice ligh
 * Testing - Features that need to be tested
 * Complete - All completed tasks
 * Issues - Any issues that came up
+
 
 ### Risk assessment
 
