@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          background-color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+    <h1>Based on the location: {{location}} </h1> <br>
+    <h1>And the weather: {{weather}} </h1> <br>
+    <h2>The movie chosen: {{movie}} </h2>
+
+    Previous: <br>
+    {% for movie in previous_movies}
+        {{movie.id}} {{movie.name}} {{movie.location}} {{movie.weather}} <br>
+
+    {% endfor %}
+
+  
+</body>
+</html>
