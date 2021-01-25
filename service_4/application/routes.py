@@ -8,5 +8,5 @@ def movie():
     "New Delhi" : {"Sunny" : "Khaali Peeli", "Rainy" : "Bulbbul", "Windy" : "Devdas"},
     "Tokyo" : {"Sunny" : "Rurouni Kenshin", "Rainy" : "Ring", "Windy" : "Midnight Sun"}
     }
-    info = request.json
+    info = request.json 
     return Response(movies[info["location"]][info["weather"]], mimetype='text/plain')
