@@ -29,11 +29,20 @@ For project tracking, I decided to use Trello board. Trello board is a nice ligh
 * Complete - All completed tasks
 * Issues - Any issues that came up
 
+![kanban_board](https://user-images.githubusercontent.com/73299366/105685604-2a4f4e80-5eee-11eb-9f0c-4cb49d51dca2.JPG)
+
 
 ### Risk assessment
+![Risk_Assessment](https://user-images.githubusercontent.com/73299366/105685674-3cc98800-5eee-11eb-8c96-ab46ec2cd399.JPG)
+
 
 ### Entity Relationship Diagram
 For the sake of this project, only one ERD is needed. The image below shows the "Movie" ERD which contains the id, name, location and weather. This table will help us create data that persists in the database after each refresh.
+![Movie_erd](https://user-images.githubusercontent.com/73299366/105685717-49e67700-5eee-11eb-8624-e74e3eb2d3b7.JPG)
+
+### CI Pipeline
+![CI-Pipeline](https://user-images.githubusercontent.com/73299366/105685792-61bdfb00-5eee-11eb-8b8d-63db57953ad7.JPG)
+
 
 ## Software Infrastructure
 ### Jenkins 
@@ -49,8 +58,10 @@ Jenkins is an open source automation server that automates many parts of the pro
 Details on the stages used in the Jenkins pipeline can be found in the jenkinsfile. 
 
 ### Swarm configuration
+![swarm](https://user-images.githubusercontent.com/73299366/105685854-79957f00-5eee-11eb-85bd-6ae8db0616f8.JPG)
 
 ### The services 
+![services](https://user-images.githubusercontent.com/73299366/105685888-84501400-5eee-11eb-8d29-8e4ea46acba3.JPG)
 
 ## Testing
 For this project, I have decided to implement unit testing in the application. Unit testing allows us to test whether each functions returns an expected response. The images below show information on how many tests have passed and how many lines have been covered, these have posted on coverage reports for easy viewing.
