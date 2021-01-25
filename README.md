@@ -3,7 +3,7 @@
 ## Contents
 * [Introduction ](#introduction )
    * [Objective](#objective)
-   * [My Project Proposol ](#my-project-proposol )
+   * [My Project Proposal ](#my-project-proposal )
 * [Software Architecture ](#software-architecture )
    * [Project Tracking ](#project-tracking)
    * [Risk Assessment](#risk-assessment)
