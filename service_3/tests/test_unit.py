@@ -11,6 +11,11 @@ class TestBase(TestCase):
 
 class TestResponse(TestBase):
     def test_weather(self):
+        with patch("choice") as random:
+            random.return_value = "Sunny" 
+            response = self.client.get(url_for('weather'))
+            self.assertEqual(b'Sunny', response.data)
+
         for x in range(50):
-            response = self.client.get(url_for('get'))
+            response = self.client.get(url_for('weather'))
             self.assertIn(response.data, [b"Sunny", b"Rainy", b"Windy"])

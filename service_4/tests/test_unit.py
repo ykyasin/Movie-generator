@@ -10,9 +10,7 @@ class TestBase(TestCase):
         return app
 
 class TestResponse(TestBase):
-    def test_common(self):
-        test = {"location":"London", "weather":"Sunny"}
-
-        response = self.client.post(url_for('get'), json=test_data)
-        self.assertEqual('Avengers: Infinity War', response.data)
+    def test_movie(self):
+        response = self.client.post(url_for('movie'), json={"location":"London", "weather":"Sunny"})
+        self.assertEqual(b"Avengers: Infinity War", response.data)
 
