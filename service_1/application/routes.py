@@ -1,5 +1,6 @@
 from application import app, db 
 from flask import render_template
+from sqlalchemy import desc
 import requests
 
 class Movies(db.Model):
