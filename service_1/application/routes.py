@@ -26,7 +26,7 @@ def home():
     #location = location_response.json()["city"]
     location = "London"
     #country = location_response.json()["country_name"]
-    county = "United Kingdom"
+    country = "United Kingdom"
     #weather = weather_response.json()["weather"][0]["main"]
     weather = "Rain"
     json_dict = {"country":country, "weather":weather}
