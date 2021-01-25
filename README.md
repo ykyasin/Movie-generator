@@ -1,4 +1,22 @@
 # movie-generator
+
+## Contents
+* [Introduction ](#introduction )
+   * [Objective](#objective)
+   * [My Project Proposol ](#my-project-proposol )
+* [Software Architecture ](#software-architecture )
+   * [Project Tracking ](#project-tracking)
+   * [Risk Assessment](#risk-assessment)
+   * [Entity Relationship Diagram](#entity-relationship-diagram)
+   * [CI Pipeline](#ci-pipeline)
+* [Software Infrastructure](#software-infrastructure)
+   * [Jenkins](#jenkins)
+   * [Swarm Configuration](#swarm-configuration)
+   * [Services Setup](#Services-Setup)
+* [Testing](#testing)
+* [Future Improvements](#future-improvements)
+* [Author](#author)
+
 ## Introduction 
 ### Objective
 This is an individual project in order to meet the SFIA requirements. The objective of this project is to create a web application based on the microservice architecture. Which allows us to split up the application into more manageble bits as opposed to one monolithic application.
@@ -32,7 +50,7 @@ For project tracking, I decided to use Trello board. Trello board is a nice ligh
 ![kanban_board](https://user-images.githubusercontent.com/73299366/105685604-2a4f4e80-5eee-11eb-9f0c-4cb49d51dca2.JPG)
 
 
-### Risk assessment
+### Risk Assessment
 ![Risk_Assessment](https://user-images.githubusercontent.com/73299366/105685674-3cc98800-5eee-11eb-8c96-ab46ec2cd399.JPG)
 
 
@@ -59,11 +77,11 @@ Jenkins is an open source automation server that automates many parts of the pro
 
 Details on the stages used in the Jenkins pipeline can be found in the jenkinsfile. 
 
-### Swarm configuration
+### Swarm Configuration
 The below image shows the basic set up of the swarm. After Ansible installs docker on both swarm-manager and swarm-worker nodes, it then initialises the swarm on the manager node and joins the worker nodes. 
 ![swarm](https://user-images.githubusercontent.com/73299366/105685854-79957f00-5eee-11eb-85bd-6ae8db0616f8.JPG)
 
-### Services setup
+### Services Setup
 As mentioned before, the project must include atleast 4 services as part of the MVP. The below image shows the set up of the services for this project.  The front-end recieves GET requests from service 1 and 2, then posts that information to service 4, which returns an object, this is a simple set up. 
 ![services](https://user-images.githubusercontent.com/73299366/105685888-84501400-5eee-11eb-8d29-8e4ea46acba3.JPG)
 
