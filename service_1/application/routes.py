@@ -18,7 +18,7 @@ def home():
         ip_address = request.environ['HTTP_X_FORWARDED_FOR']
     else:
         ip_address = request.remote_addr
-    api_location = getenv("API_LOCATION")
+    api_location = getenv("DATABASE_URI")
     api_weather = getenv("API_WEATHER")
     #location_response = requests.post('http://movie-gen_location_service:5000/location', data=ip_address) 
     #location_response = requests.post('http://movie-gen_location_service:5000/location', json={"ip_address":ip_address, "api_key":api_location}) 
