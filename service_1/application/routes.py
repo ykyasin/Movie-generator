@@ -1,4 +1,4 @@
-from application import app, db 
+from application import app, db, api_key
 from flask import render_template, jsonify, request
 import requests
 import json
@@ -18,7 +18,8 @@ def home():
     else:
         ip_address = request.remote_addr
     
-    location_response = requests.post('http://movie-gen_location_service:5000/location', data=ip_address) 
+    #location_response = requests.post('http://movie-gen_location_service:5000/location', data=ip_address) 
+    location_response = requests.post('http://movie-gen_location_service:5000/location', json={"ip_address":ip_address, "api_key":api_key("location")}) 
     weather_response = requests.post('http://movie-gen_weather_service:5000/weather', json=location_response.json())
     
     location = location_response.json()["city"]
