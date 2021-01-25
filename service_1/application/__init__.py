@@ -9,9 +9,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 def api_key(api):
-    if api = "location"
+    if api = "location":
         return getenv("API_LOCATION") 
-    elif api = "weather"
+    elif api = "weather":
         return getenv("API_WEATHER")
     return "Invalid key"
 
