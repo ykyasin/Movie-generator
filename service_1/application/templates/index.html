@@ -11,9 +11,12 @@
     </style>
 </head>
 <body>
-    <h1>Based on the location: {{location}} </h1> <br>
-    <h1>And the weather: {{weather}} </h1> <br>
-    <h2>The movie chosen: {{movie}} </h2>
+    <h1>Welcome to the movie generation app</h1>
+    <h2>A random location and weather will be generated, and based on the a movie will be chosen for you.</h2>
+    <br>
+    <h3>Your location: {{location}} </h3>
+    <h3>Your weather: {{weather}} </h3> <br>
+    <h3>Movie: <b> {{movie}} </b> </h3>
 
     Previous: <br>
     {% for movie in previous_movies %}
