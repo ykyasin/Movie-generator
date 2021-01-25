@@ -85,3 +85,13 @@ A junit.xml is also produced which allows us to make use of a Jenkins plugin cal
 ![testing](https://user-images.githubusercontent.com/73299366/105688476-8d8eb000-5ef1-11eb-9570-01248b05ad21.JPG)
 
 The graph shows that in the latest build all tests have passed, as well as 100% coverage. 
+
+## Future Improvements 
+There are many improvements that can be made to the application. However, to name a few:
+
+* Implement an external api call to get the users location, and the weather 
+* Reduce downtime by using NEXUS as opposed to Dockerhub
+* Add more testing to make it even more robust, including integration testing 
+
+## Author
+Yusuf Yasin 
