@@ -9,4 +9,4 @@ def movie():
     "Tokyo" : {"Sunny" : "Rurouni Kenshin", "Rainy" : "Ring", "Windy" : "Midnight Sun"}
     }
     info = request.json
-    return Response(movies[info["weather"]][info[weather]], mimetype='text/plain')
+    return Response(movies[info["location"]][info["weather"]], mimetype='text/plain')
