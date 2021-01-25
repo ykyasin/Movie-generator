@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
         body {
-          background-color: blanchedalmond;
+          background-color: greenyellow;
         }
     </style>
 </head>
@@ -18,9 +18,9 @@
     <h3>Your weather: {{weather}} </h3> <br>
     <h3>Movie: <b> {{movie}} </b> </h3>
 
-    Previous: <br>
+    <p>Previous refreshes:</p>
     {% for movie in previous_movies %}
-        {{movie.id}} {{movie.name}} {{movie.location}} {{movie.weather}} <br>
+        {{movie.id}}: {{movie.name}}. The location was: {{movie.location}}. The weather was {{movie.weather}} <br>
 
     {% endfor %}
 
