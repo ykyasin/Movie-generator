@@ -11,3 +11,8 @@
   roles:
     - docker
     - swarm-workers
+- name: Set up nginx load-balancer
+  become: true
+  hosts: load_balancer
+  roles:
+    - nginx
